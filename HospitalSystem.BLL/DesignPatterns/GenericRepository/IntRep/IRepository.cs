@@ -12,32 +12,25 @@ namespace HospitalSystem.BLL.DesignPatterns.GenericRepository.IntRep
     {
         // List Commands
         List<T> GetAll();
-        List<T> GetActiceve();
+        List<T> GetActives();
         List<T> GetPassives();
         List<T> GetModifieds();
-
 
         // Modify Commands
         void add(T item);
         void Delete(T item);
         void Update(T item);
-        void Remove(T item);
-
+        void Destroy(T item);
 
         // Linq Commands
-
-
-        List <T> where (Expression<Func<T, bool>> exp);
+        List <T> Where (Expression<Func<T, bool>> exp);
         bool Any (Expression<Func<T, bool>> exp);
-
         T FirstOrDefault(Expression<Func<T, bool>> exp);
-
         object Select (Expression<Func<T, bool>> exp);
         List<X> Select <X>(Expression<Func<T,X>> exp) where X : class;
 
-
         // Find 
-       T Find (int id);
+        T Find (int id);
         List<T> GetLastDatas(int count =1);
         List<T> GetFirstDatas(int conunt = 1);
 

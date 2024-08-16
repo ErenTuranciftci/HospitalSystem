@@ -18,84 +18,101 @@ namespace HospitalSystem.BLL.DesignPatterns.GenericRepository.EFBaseRep
         {
             _db=DBTool.DbInstance;
         }
+
+        protected void Save()
+        {
+            _db.SaveChanges();
+        }
+
         public void add(T item)
         {
-            throw new NotImplementedException();
+            _db.Set<T>().Add(item);
+            Save();
         }
 
         public bool Any(Expression<Func<T, bool>> exp)
         {
-            throw new NotImplementedException();
+            return _db.Set<T>().Any(exp);
         }
 
         public void Delete(T item)
         {
-            throw new NotImplementedException();
+            item.DeletedDate = DateTime.Now;
+            item.DataStatus = ENTITIES.Enums.DataStatus.Deleted;
+            Save();
+        }
+
+        public void Destroy(T item)
+        {
+            if(item.DataStatus != ENTITIES.Enums.DataStatus.Deleted) return;
+
+           _db.Set<T>().Remove(item);
+           Save();
         }
 
         public T Find(int id)
         {
-            throw new NotImplementedException();
+            return _db.Set<T>().Find(id);
         }
 
         public T FirstOrDefault(Expression<Func<T, bool>> exp)
         {
-            throw new NotImplementedException();
+            return _db.Set<T>().FirstOrDefault(exp);
         }
 
-        public List<T> GetActiceve()
+        public List<T> GetActives()
         {
-            throw new NotImplementedException();
+            return Where(x=>x.DataStatus != ENTITIES.Enums.DataStatus.Deleted);
         }
 
         public List<T> GetAll()
         {
-            throw new NotImplementedException();
+            return _db.Set<T>().ToList();
         }
 
-        public List<T> GetFirstDatas(int conunt = 1)
+        public List<T> GetFirstDatas(int count = 1)
         {
-            throw new NotImplementedException();
+            return _db.Set<T>().OrderBy(x => x.CreatedDate).Take(count).ToList();
         }
 
         public List<T> GetLastDatas(int count = 1)
         {
-            throw new NotImplementedException();
+            return _db.Set<T>().OrderByDescending(x => x.CreatedDate).Take(count).ToList();
         }
 
         public List<T> GetModifieds()
         {
-            throw new NotImplementedException();
+            return Where(x => x.DataStatus == ENTITIES.Enums.DataStatus.Modified);
         }
 
         public List<T> GetPassives()
         {
-            throw new NotImplementedException();
-        }
-
-        public void Remove(T item)
-        {
-            throw new NotImplementedException();
+            return Where(x => x.DataStatus == ENTITIES.Enums.DataStatus.Deleted);
         }
 
         public object Select(Expression<Func<T, bool>> exp)
         {
-            throw new NotImplementedException();
+            return _db.Set<T>().Select(exp);
         }
 
         public List<X> Select<X>(Expression<Func<T, X>> exp) where X : class
         {
-            throw new NotImplementedException();
+            return _db.Set<T>().Select(exp).ToList();
         }
 
         public void Update(T item)
         {
-            throw new NotImplementedException();
+            item.ModifiedDate = DateTime.Now;
+            item.DataStatus = ENTITIES.Enums.DataStatus.Modified;
+            T originalData = Find(item.ID);
+
+            _db.Entry(originalData).CurrentValues.SetValues(item);
+            Save();
         }
 
-        public List<T> where(Expression<Func<T, bool>> exp)
+        public List<T> Where(Expression<Func<T, bool>> exp)
         {
-            throw new NotImplementedException();
+            return _db.Set<T>().Where(exp).ToList();
         }
     }
 }

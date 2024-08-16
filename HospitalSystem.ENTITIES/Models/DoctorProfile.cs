@@ -10,6 +10,9 @@ namespace HospitalSystem.ENTITIES.Models
     {
         public string Name { get; set; }
         public string Surname { get; set; }
+        public string Specialization { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
         public int? DepartmentID { get; set; }
 
         //Relational Properties

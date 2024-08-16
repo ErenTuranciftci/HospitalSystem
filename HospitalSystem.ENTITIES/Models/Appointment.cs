@@ -10,6 +10,7 @@ namespace HospitalSystem.ENTITIES.Models
     {
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+        public string Reason { get; set; }
         public int? DoctorID { get; set; }
         public int? PatientID { get; set; }
 
