@@ -172,7 +172,7 @@
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.txtName);
             this.Name = "DepartmentCrudForm";
-            this.Text = "Form1";
+            this.Text = "DepartmentCrudForm";
             this.Load += new System.EventHandler(this.DepartmentCrudForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
