@@ -24,7 +24,7 @@ namespace HospitalSystem.BLL.DesignPatterns.GenericRepository.EFBaseRep
             _db.SaveChanges();
         }
 
-        public void add(T item)
+        public void Add(T item)
         {
             _db.Set<T>().Add(item);
             Save();

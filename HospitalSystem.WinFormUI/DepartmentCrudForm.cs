@@ -29,7 +29,7 @@ namespace HospitalSystem.WinFormUI
         private void Listele()
         {
             lstDepaments.DataSource = _depRep.GetAll();
-            lstDepaments.SelectedItem = -1;
+            lstDepaments.SelectedIndex = -1;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -39,7 +39,7 @@ namespace HospitalSystem.WinFormUI
                 DepartmanName=txtName.Text,
                 Description=txtDescription.Text,
             };
-            _depRep.add(d);
+            _depRep.Add(d);
             Listele();
         }
 

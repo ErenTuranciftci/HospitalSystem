@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace HospitalSystem.ENTITIES.Models
 {
@@ -18,5 +19,12 @@ namespace HospitalSystem.ENTITIES.Models
 
         public virtual Doctor Doctor { get; set; }
         public virtual Patient Patient { get; set; }
+
+        //Methods
+
+        public override string ToString()
+        {
+            return $"Randevu tarihi: {StartDate} Hasta{Patient.ToString()}";
+        }
     }
 }

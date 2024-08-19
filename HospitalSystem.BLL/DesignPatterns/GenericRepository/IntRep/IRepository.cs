@@ -17,7 +17,7 @@ namespace HospitalSystem.BLL.DesignPatterns.GenericRepository.IntRep
         List<T> GetModifieds();
 
         // Modify Commands
-        void add(T item);
+        void Add(T item);
         void Delete(T item);
         void Update(T item);
         void Destroy(T item);
