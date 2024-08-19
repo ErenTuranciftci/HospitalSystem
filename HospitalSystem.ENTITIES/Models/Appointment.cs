@@ -24,7 +24,7 @@ namespace HospitalSystem.ENTITIES.Models
 
         public override string ToString()
         {
-            return $"Randevu tarihi: {StartDate} Hasta{Patient.ToString()}";
+            return $"Randevu tarihi: {StartDate} Hasta{Patient.PatientProfile.ToString()}";
         }
     }
 }
