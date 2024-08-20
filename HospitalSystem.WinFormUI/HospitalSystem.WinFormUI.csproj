@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppointmentCrudForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppointmentCrudForm.Designer.cs">
+      <DependentUpon>AppointmentCrudForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DepartmentCrudForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AppointmentCrudForm.resx">
+      <DependentUpon>AppointmentCrudForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DepartmentCrudForm.resx">
       <DependentUpon>DepartmentCrudForm.cs</DependentUpon>
     </EmbeddedResource>

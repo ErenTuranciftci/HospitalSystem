@@ -16,7 +16,7 @@ namespace HospitalSystem.WinFormUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DepartmentCrudForm());
+            Application.Run(new AppointmentCrudForm());
         }
     }
 }

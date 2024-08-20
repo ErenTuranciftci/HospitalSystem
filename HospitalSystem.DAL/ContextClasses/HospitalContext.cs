@@ -12,7 +12,7 @@ namespace HospitalSystem.DAL.ContextClasses
     public class HospitalContext :DbContext
     {
 
-        public HospitalContext(): base("ErenConnection")
+        public HospitalContext(): base("KadirConnection")
         {
             
         }
