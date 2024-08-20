@@ -15,5 +15,12 @@ namespace HospitalSystem.ENTITIES.Models
 
         public virtual PatientProfile PatientProfile { get; set; }
         public virtual List<Appointment> Appointments { get; set; }
+
+        //Methods
+
+        public override string ToString()
+        {
+            return $"{UserName} {Password}";
+        }
     }
 }

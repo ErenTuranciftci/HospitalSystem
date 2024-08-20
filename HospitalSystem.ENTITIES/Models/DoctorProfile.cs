@@ -9,8 +9,7 @@ namespace HospitalSystem.ENTITIES.Models
     public class DoctorProfile : BaseEntity
     {
         public string Name { get; set; }
-        public string Surname { get; set; }
-        public string Specialization { get; set; }
+        public string Surname { get; set; }        
         public string Email { get; set; }
         public string Phone { get; set; }
         public int? DepartmentID { get; set; }
@@ -19,5 +18,12 @@ namespace HospitalSystem.ENTITIES.Models
 
         public virtual Doctor Doctor { get; set; }
         public virtual Department Department { get; set; }
+
+        //Methods
+
+        public override string ToString()
+        {
+            return $"{Name} {Surname}";
+        }
     }
 }

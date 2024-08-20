@@ -29,7 +29,7 @@ namespace HospitalSystem.WinFormUI
         private void Listele()
         {
             lstPatients.DataSource = _patRep.GetAll();
-            lstPatients.SelectedItem = -1;
+            lstPatients.SelectedIndex = -1;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -39,7 +39,7 @@ namespace HospitalSystem.WinFormUI
                 UserName = txtUserName.Text,
                 Password = txtPassword.Text,
             };
-            _patRep.add(p);
+            _patRep.Add(p);
             Listele();
         }
 

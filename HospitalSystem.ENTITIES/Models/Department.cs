@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace HospitalSystem.ENTITIES.Models
 {
@@ -14,5 +15,12 @@ namespace HospitalSystem.ENTITIES.Models
         //Relational Properties
 
         public virtual List<DoctorProfile> DoctorProfiles { get; set; }
+
+        //Methods
+
+        public override string ToString()
+        {
+            return DepartmanName;
+        }
     }
 }
