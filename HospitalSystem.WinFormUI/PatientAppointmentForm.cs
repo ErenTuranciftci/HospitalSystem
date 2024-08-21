@@ -18,7 +18,6 @@ namespace HospitalSystem.WinFormUI
         Patient _authPatient;
         DoctorRepository _docRep;
         AppointmentRepository _appRep;
-        Doctor _selectDoctor;
 
         public PatientAppointmentForm(Patient patient)
         {
