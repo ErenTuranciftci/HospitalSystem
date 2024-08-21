@@ -103,7 +103,7 @@
             this.cmbPatients.Name = "cmbPatients";
             this.cmbPatients.Size = new System.Drawing.Size(121, 21);
             this.cmbPatients.TabIndex = 61;
-            this.cmbPatients.Click += new System.EventHandler(this.cmbPatients_Click);
+            this.cmbPatients.SelectedIndexChanged += new System.EventHandler(this.cmbPatients_SelectedIndexChanged);
             // 
             // btnModifieds
             // 
