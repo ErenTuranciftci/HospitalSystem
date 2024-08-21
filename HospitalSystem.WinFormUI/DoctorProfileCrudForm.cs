@@ -34,7 +34,7 @@ namespace HospitalSystem.WinFormUI
         private void Listele()
         {
             lstDoctorProfiles.DataSource = _docProRep.GetActives();
-            cmbDepartments.DataSource = _docRep.GetActives();
+            cmbDepartments.DataSource = _depRep.GetActives();
             cmbDoctors.DataSource = _docRep.GetActives();
 
             lstDoctorProfiles.SelectedIndex = -1;
@@ -46,11 +46,26 @@ namespace HospitalSystem.WinFormUI
         Department _selectedDep;
         DoctorProfile _selectedDocPro;
 
+        private void cmbDepartments_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbDepartments.SelectedItem != null) _selectedDep = cmbDepartments.SelectedItem as Department;
+        }
+
+        private void cmbDoctors_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbDoctors.SelectedItem != null) _selectedDoc = cmbDoctors.SelectedItem as Doctor;
+        }
+
+        private void lstDoctorProfiles_Click(object sender, EventArgs e)
+        {
+            if (lstDoctorProfiles.SelectedItem != null) _selectedDocPro = lstDoctorProfiles.SelectedItem as DoctorProfile;
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if(_selectedDep == null || _selectedDocPro == null)
+            if (_selectedDep == null || _selectedDoc == null)
             {
-                MessageBox.Show("Lütfen bir departman ve doktor seçin.", "Uyarı");
+                MessageBox.Show("Lütfen bir departman ve doktor seçin.");
                 return;
             }
             DoctorProfile dP = new DoctorProfile()
@@ -67,26 +82,11 @@ namespace HospitalSystem.WinFormUI
             _selectedDoc = null;
             _selectedDep = null;
             Listele();
-        }
-
-        private void cmbDoctors_Click(object sender, EventArgs e)
-        {
-            if (cmbDoctors.SelectedItem != null) _selectedDoc = cmbDoctors.SelectedItem as Doctor;
-        }
-
-        private void cmbDepartments_Click(object sender, EventArgs e)
-        {
-            if(cmbDepartments.SelectedItem != null) _selectedDep = cmbDepartments.SelectedItem as Department;
-        }
-
-        private void lstDoctorProfiles_Click(object sender, EventArgs e)
-        {
-            if(lstDoctorProfiles.SelectedItem != null) _selectedDocPro = lstDoctorProfiles.SelectedItem as DoctorProfile;
-        }
+        }        
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if(_selectedDocPro != null && _selectedDep != null)
+            if (_selectedDocPro != null && _selectedDep != null)
             {
                 _selectedDocPro.Name = txtName.Text;
                 _selectedDocPro.Email = txtEmail.Text;
@@ -100,7 +100,7 @@ namespace HospitalSystem.WinFormUI
                 _selectedDep = null;
                 Listele();
             }
-                        
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -142,5 +142,6 @@ namespace HospitalSystem.WinFormUI
         {
             lstDoctorProfiles.DataSource = _docProRep.GetModifieds();
         }
+                
     }
 }

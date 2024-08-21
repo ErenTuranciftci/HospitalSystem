@@ -172,7 +172,7 @@
             this.cmbDoctors.Name = "cmbDoctors";
             this.cmbDoctors.Size = new System.Drawing.Size(121, 21);
             this.cmbDoctors.TabIndex = 45;
-            this.cmbDoctors.Click += new System.EventHandler(this.cmbDoctors_Click);
+            this.cmbDoctors.SelectedIndexChanged += new System.EventHandler(this.cmbDoctors_SelectedIndexChanged);
             // 
             // cmbDepartments
             // 
@@ -181,7 +181,7 @@
             this.cmbDepartments.Name = "cmbDepartments";
             this.cmbDepartments.Size = new System.Drawing.Size(134, 21);
             this.cmbDepartments.TabIndex = 45;
-            this.cmbDepartments.Click += new System.EventHandler(this.cmbDepartments_Click);
+            this.cmbDepartments.SelectedIndexChanged += new System.EventHandler(this.cmbDepartments_SelectedIndexChanged);
             // 
             // txtEmail
             // 

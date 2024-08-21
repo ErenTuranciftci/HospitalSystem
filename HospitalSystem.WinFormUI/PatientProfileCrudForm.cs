@@ -44,12 +44,11 @@ namespace HospitalSystem.WinFormUI
         {
             if (lstPatientProfiles.SelectedItem != null) _selectedPatPro = lstPatientProfiles.SelectedItem as PatientProfile;
         }
-
-        private void cmbPatients_Click(object sender, EventArgs e)
+        private void cmbPatients_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbPatients.SelectedItem != null) _selectedPat = cmbPatients.SelectedItem as Patient;
         }
-
+        
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (_selectedPat == null)
@@ -127,5 +126,6 @@ namespace HospitalSystem.WinFormUI
         {
             lstPatientProfiles.DataSource = _patProRep.GetModifieds();
         }
+
     }
 }
