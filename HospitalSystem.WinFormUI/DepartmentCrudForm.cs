@@ -84,22 +84,22 @@ namespace HospitalSystem.WinFormUI
 
         private void btnGetAll_Click(object sender, EventArgs e)
         {
-            _depRep.GetAll();
+            lstDepaments.DataSource = _depRep.GetAll();
         }
 
         private void btnActives_Click(object sender, EventArgs e)
         {
-            _depRep.GetActives();
+            lstDepaments.DataSource = _depRep.GetActives();
         }
 
         private void btnPassives_Click(object sender, EventArgs e)
         {
-            _depRep.GetPassives();
+            lstDepaments.DataSource = _depRep.GetPassives();
         }
 
         private void btnModifieds_Click(object sender, EventArgs e)
         {
-            _depRep.GetModifieds();
+            lstDepaments.DataSource = _depRep.GetModifieds();
         }
     }
 }

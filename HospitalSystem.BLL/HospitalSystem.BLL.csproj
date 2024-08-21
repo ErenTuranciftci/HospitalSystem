@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DesignPatterns\GenericRepository\ConcReps\AdminRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepository\ConcReps\AppointmentRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepository\ConcReps\DepartmentRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepository\ConcReps\DoctorProfileRepository.cs" />

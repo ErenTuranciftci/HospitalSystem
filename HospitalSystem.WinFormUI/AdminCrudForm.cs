@@ -12,53 +12,51 @@ using System.Windows.Forms;
 
 namespace HospitalSystem.WinFormUI
 {
-    public partial class DoctorCrudForm : Form
+    public partial class AdminCrudForm : Form
     {
-
-        DoctorRepository _docRep;
-        public DoctorCrudForm()
+        AdminRepository _admRep;
+        public AdminCrudForm()
         {
             InitializeComponent();
-            _docRep = new DoctorRepository();
+            _admRep = new AdminRepository();
         }
 
-        private void DoctorCrudForm_Load(object sender, EventArgs e)
+        private void AdminCrudForm_Load(object sender, EventArgs e)
         {
             Listele();
         }
 
         private void Listele()
         {
-            lstDoctors.DataSource = _docRep.GetAll();
-            lstDoctors.SelectedIndex = -1;
+            lstAdmins.DataSource = _admRep.GetAll();
+            lstAdmins.SelectedIndex = -1;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Doctor d = new Doctor()
+            Admin a = new Admin()
             {
                 UserName = txtUserName.Text,
-                Password = txtPassword.Text,
+                Password = txtPassword.Text
             };
-            _docRep.Add(d);
+            _admRep.Add(a);
             Listele();
         }
 
-        Doctor _selected;
+        Admin _selected;
 
-        private void lstDoctors_Click(object sender, EventArgs e)
+        private void lstAdmins_Click(object sender, EventArgs e)
         {
-            if(lstDoctors.SelectedItem != null) _selected = lstDoctors.SelectedItem as Doctor;
-
+            if (lstAdmins.SelectedItem != null) _selected = lstAdmins.SelectedItem as Admin;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (_selected != null)
+            if (_selected == null)
             {
                 _selected.UserName = txtUserName.Text;
                 _selected.Password = txtPassword.Text;
-                _docRep.Update(_selected);
+                _admRep.Update(_selected);
                 _selected = null;
                 Listele();
             }
@@ -68,7 +66,7 @@ namespace HospitalSystem.WinFormUI
         {
             if (_selected != null)
             {
-                _docRep.Delete(_selected);
+                _admRep.Delete(_selected);
                 _selected = null;
                 Listele();
             }
@@ -78,7 +76,7 @@ namespace HospitalSystem.WinFormUI
         {
             if (_selected != null)
             {
-                _docRep.Destroy(_selected);
+                _admRep.Destroy(_selected);
                 _selected = null;
                 Listele();
             }
@@ -86,23 +84,22 @@ namespace HospitalSystem.WinFormUI
 
         private void btnGetAll_Click(object sender, EventArgs e)
         {
-            lstDoctors.DataSource = _docRep.GetAll();
+            lstAdmins.DataSource = _admRep.GetAll();
         }
 
         private void btnActives_Click(object sender, EventArgs e)
         {
-            lstDoctors.DataSource = _docRep.GetActives();
+            lstAdmins.DataSource = _admRep.GetActives();
         }
 
         private void btnPassives_Click(object sender, EventArgs e)
         {
-            lstDoctors.DataSource = _docRep.GetPassives();
+            lstAdmins.DataSource = _admRep.GetPassives();
         }
 
         private void btnModifieds_Click(object sender, EventArgs e)
         {
-            lstDoctors.DataSource = _docRep.GetModifieds();
+            lstAdmins.DataSource = _admRep.GetModifieds();
         }
-
     }
 }

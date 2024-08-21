@@ -1,6 +1,6 @@
 ﻿namespace HospitalSystem.WinFormUI
 {
-    partial class PatientCrudForm
+    partial class AdminCrudForm
     {
         /// <summary>
         /// Required designer variable.
@@ -36,11 +36,11 @@
             this.btnGetAll = new System.Windows.Forms.Button();
             this.btnActives = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.lstPatients = new System.Windows.Forms.ListBox();
+            this.lstAdmins = new System.Windows.Forms.ListBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnModifieds
@@ -49,7 +49,7 @@
             this.btnModifieds.Margin = new System.Windows.Forms.Padding(2);
             this.btnModifieds.Name = "btnModifieds";
             this.btnModifieds.Size = new System.Drawing.Size(93, 28);
-            this.btnModifieds.TabIndex = 26;
+            this.btnModifieds.TabIndex = 15;
             this.btnModifieds.Text = "Modifieds";
             this.btnModifieds.UseVisualStyleBackColor = true;
             this.btnModifieds.Click += new System.EventHandler(this.btnModifieds_Click);
@@ -60,7 +60,7 @@
             this.btnDestory.Margin = new System.Windows.Forms.Padding(2);
             this.btnDestory.Name = "btnDestory";
             this.btnDestory.Size = new System.Drawing.Size(93, 28);
-            this.btnDestory.TabIndex = 27;
+            this.btnDestory.TabIndex = 16;
             this.btnDestory.Text = "Destroy";
             this.btnDestory.UseVisualStyleBackColor = true;
             this.btnDestory.Click += new System.EventHandler(this.btnDestory_Click);
@@ -71,7 +71,7 @@
             this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(93, 28);
-            this.btnDelete.TabIndex = 28;
+            this.btnDelete.TabIndex = 17;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -82,7 +82,7 @@
             this.btnPassives.Margin = new System.Windows.Forms.Padding(2);
             this.btnPassives.Name = "btnPassives";
             this.btnPassives.Size = new System.Drawing.Size(93, 28);
-            this.btnPassives.TabIndex = 29;
+            this.btnPassives.TabIndex = 18;
             this.btnPassives.Text = "Passives";
             this.btnPassives.UseVisualStyleBackColor = true;
             this.btnPassives.Click += new System.EventHandler(this.btnPassives_Click);
@@ -93,7 +93,7 @@
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(93, 28);
-            this.btnUpdate.TabIndex = 30;
+            this.btnUpdate.TabIndex = 19;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -104,7 +104,7 @@
             this.btnGetAll.Margin = new System.Windows.Forms.Padding(2);
             this.btnGetAll.Name = "btnGetAll";
             this.btnGetAll.Size = new System.Drawing.Size(93, 28);
-            this.btnGetAll.TabIndex = 31;
+            this.btnGetAll.TabIndex = 20;
             this.btnGetAll.Text = "All";
             this.btnGetAll.UseVisualStyleBackColor = true;
             this.btnGetAll.Click += new System.EventHandler(this.btnGetAll_Click);
@@ -115,7 +115,7 @@
             this.btnActives.Margin = new System.Windows.Forms.Padding(2);
             this.btnActives.Name = "btnActives";
             this.btnActives.Size = new System.Drawing.Size(93, 28);
-            this.btnActives.TabIndex = 32;
+            this.btnActives.TabIndex = 21;
             this.btnActives.Text = "Actives";
             this.btnActives.UseVisualStyleBackColor = true;
             this.btnActives.Click += new System.EventHandler(this.btnActives_Click);
@@ -126,20 +126,20 @@
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(93, 28);
-            this.btnAdd.TabIndex = 33;
+            this.btnAdd.TabIndex = 22;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // lstPatients
+            // lstAdmins
             // 
-            this.lstPatients.FormattingEnabled = true;
-            this.lstPatients.Location = new System.Drawing.Point(440, 83);
-            this.lstPatients.Margin = new System.Windows.Forms.Padding(2);
-            this.lstPatients.Name = "lstPatients";
-            this.lstPatients.Size = new System.Drawing.Size(222, 303);
-            this.lstPatients.TabIndex = 25;
-            this.lstPatients.Click += new System.EventHandler(this.lstPatients_Click);
+            this.lstAdmins.FormattingEnabled = true;
+            this.lstAdmins.Location = new System.Drawing.Point(440, 83);
+            this.lstAdmins.Margin = new System.Windows.Forms.Padding(2);
+            this.lstAdmins.Name = "lstAdmins";
+            this.lstAdmins.Size = new System.Drawing.Size(222, 303);
+            this.lstAdmins.TabIndex = 14;
+            this.lstAdmins.Click += new System.EventHandler(this.lstAdmins_Click);
             // 
             // txtPassword
             // 
@@ -147,7 +147,7 @@
             this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(113, 20);
-            this.txtPassword.TabIndex = 23;
+            this.txtPassword.TabIndex = 12;
             // 
             // txtUserName
             // 
@@ -155,27 +155,27 @@
             this.txtUserName.Margin = new System.Windows.Forms.Padding(2);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(113, 20);
-            this.txtUserName.TabIndex = 24;
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(100, 97);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 23);
-            this.label2.TabIndex = 34;
-            this.label2.Text = "Password";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txtUserName.TabIndex = 13;
             // 
             // label1
             // 
             this.label1.Location = new System.Drawing.Point(100, 63);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 23);
-            this.label1.TabIndex = 35;
+            this.label1.TabIndex = 23;
             this.label1.Text = "UserName";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // PatientCrudForm
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(100, 97);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 23);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Password";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // AdminCrudForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -190,12 +190,12 @@
             this.Controls.Add(this.btnGetAll);
             this.Controls.Add(this.btnActives);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.lstPatients);
+            this.Controls.Add(this.lstAdmins);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUserName);
-            this.Name = "PatientCrudForm";
-            this.Text = "PatientCrudForm";
-            this.Load += new System.EventHandler(this.PatientCrudForm_Load);
+            this.Name = "AdminCrudForm";
+            this.Text = "AdminCrudForm";
+            this.Load += new System.EventHandler(this.AdminCrudForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,10 +211,10 @@
         private System.Windows.Forms.Button btnGetAll;
         private System.Windows.Forms.Button btnActives;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.ListBox lstPatients;
+        private System.Windows.Forms.ListBox lstAdmins;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtUserName;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

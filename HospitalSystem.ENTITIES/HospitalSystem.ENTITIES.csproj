@@ -42,8 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\DataStatus.cs" />
+    <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\BaseEntity.cs" />
+    <Compile Include="Models\BaseUser.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\DoctorProfile.cs" />
