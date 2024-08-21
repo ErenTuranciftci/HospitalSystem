@@ -80,6 +80,12 @@
     <Compile Include="DoctorProfileCrudForm.Designer.cs">
       <DependentUpon>DoctorProfileCrudForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PatientAppointmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientAppointmentForm.Designer.cs">
+      <DependentUpon>PatientAppointmentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PatientCrudForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DoctorProfileCrudForm.resx">
       <DependentUpon>DoctorProfileCrudForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientAppointmentForm.resx">
+      <DependentUpon>PatientAppointmentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PatientCrudForm.resx">
       <DependentUpon>PatientCrudForm.cs</DependentUpon>

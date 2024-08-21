@@ -76,6 +76,7 @@
             this.cmbDoctors.Name = "cmbDoctors";
             this.cmbDoctors.Size = new System.Drawing.Size(211, 24);
             this.cmbDoctors.TabIndex = 0;
+            this.cmbDoctors.SelectedIndexChanged += new System.EventHandler(this.cmbDoctors_SelectedIndexChanged);
             // 
             // lstAppointments
             // 

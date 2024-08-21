@@ -14,14 +14,14 @@ namespace HospitalSystem.WinFormUI
 {
     public partial class DoctorProfileCrudForm : Form
     {
-        DoctorRepositoy _docRep;
+        DoctorRepository _docRep;
         DoctorProfileRepository _docProRep;
         DepartmentRepository _depRep;
 
         public DoctorProfileCrudForm()
         {
             InitializeComponent();
-            _docRep = new DoctorRepositoy();
+            _docRep = new DoctorRepository();
             _depRep = new DepartmentRepository();
             _docProRep = new DoctorProfileRepository();
         }
