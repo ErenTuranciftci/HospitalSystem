@@ -57,7 +57,7 @@
     <Compile Include="DesignPatterns\GenericRepository\ConcReps\AppointmentRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepository\ConcReps\DepartmentRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepository\ConcReps\DoctorProfileRepository.cs" />
-    <Compile Include="DesignPatterns\GenericRepository\ConcReps\DoctorRepositoy.cs" />
+    <Compile Include="DesignPatterns\GenericRepository\ConcReps\DoctorRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepository\ConcReps\PatientProfileRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepository\ConcReps\PatientRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepository\EFBaseRep\BaseRepository.cs" />

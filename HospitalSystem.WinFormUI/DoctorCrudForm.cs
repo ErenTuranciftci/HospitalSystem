@@ -15,11 +15,11 @@ namespace HospitalSystem.WinFormUI
     public partial class DoctorCrudForm : Form
     {
 
-        DoctorRepositoy _docRep;
+        DoctorRepository _docRep;
         public DoctorCrudForm()
         {
             InitializeComponent();
-            _docRep = new DoctorRepositoy();
+            _docRep = new DoctorRepository();
         }
 
         private void DoctorCrudForm_Load(object sender, EventArgs e)

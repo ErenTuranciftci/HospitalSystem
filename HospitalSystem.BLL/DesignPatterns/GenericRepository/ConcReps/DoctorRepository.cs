@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace HospitalSystem.BLL.DesignPatterns.GenericRepository.ConcReps
 {
-    public class DoctorRepositoy:BaseRepository<Doctor>
+    public class DoctorRepository:BaseRepository<Doctor>
     {
-        public DoctorRepositoy()
+        public DoctorRepository()
         {
             
         }

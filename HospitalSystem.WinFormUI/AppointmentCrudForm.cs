@@ -15,14 +15,14 @@ namespace HospitalSystem.WinFormUI
 {
     public partial class AppointmentCrudForm : Form
     {
-        DoctorRepositoy _docRep;
+        DoctorRepository _docRep;
         AppointmentRepository _appRep;
         Appointment _selectedAppointment;
 
         public AppointmentCrudForm()
         {
             InitializeComponent();
-            _docRep = new DoctorRepositoy();
+            _docRep = new DoctorRepository();
             _appRep = new AppointmentRepository();
         }
 
@@ -185,6 +185,11 @@ namespace HospitalSystem.WinFormUI
         private void btnModifieds_Click(object sender, EventArgs e)
         {
             UpdateListboxPassivesAndModifieds(DataStatus.Modified);
+        }
+
+        private void cmbDoctors_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateListbox();
         }
     }
 }
