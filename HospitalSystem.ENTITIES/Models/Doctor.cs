@@ -7,10 +7,8 @@ using System.Xml.Linq;
 
 namespace HospitalSystem.ENTITIES.Models
 {
-    public class Doctor : BaseEntity
-    {
-        public string UserName { get; set; }
-        public string Password { get; set; }
+    public class Doctor : BaseUser
+    {        
 
         //Relational Properties
 

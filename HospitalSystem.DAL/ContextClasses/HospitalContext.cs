@@ -12,7 +12,7 @@ namespace HospitalSystem.DAL.ContextClasses
     public class HospitalContext :DbContext
     {
 
-        public HospitalContext(): base("KadirConnection")
+        public HospitalContext(): base("ErenConnection")
         {
             
         }
@@ -26,7 +26,7 @@ namespace HospitalSystem.DAL.ContextClasses
             modelBuilder.Configurations.Add(new DoctorProfileConfiguration());
             modelBuilder.Configurations.Add(new PatientConfiguration());
             modelBuilder.Configurations.Add(new PatientProfileConfiguration());
-           
+            modelBuilder.Configurations.Add(new AdminConfiguration());
 
         }
 
@@ -36,6 +36,7 @@ namespace HospitalSystem.DAL.ContextClasses
         public DbSet<DoctorProfile> DoctorProfiles { get; set; }
         public DbSet<Patient>  Patients { get; set; }
         public DbSet<PatientProfile> PatientProfiles { get; set; }
+        public DbSet<Admin> Admins { get; set; }
    
 
     }

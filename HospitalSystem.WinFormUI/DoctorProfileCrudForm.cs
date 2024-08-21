@@ -125,22 +125,22 @@ namespace HospitalSystem.WinFormUI
 
         private void btnGetAll_Click(object sender, EventArgs e)
         {
-            _docProRep.GetAll();
+            lstDoctorProfiles.DataSource = _docProRep.GetAll();
         }
 
         private void btnActives_Click(object sender, EventArgs e)
         {
-            _docProRep.GetActives();
+            lstDoctorProfiles.DataSource = _docProRep.GetActives();
         }
 
         private void btnPassives_Click(object sender, EventArgs e)
         {
-            _docProRep.GetPassives();
+            lstDoctorProfiles.DataSource = _docProRep.GetPassives();
         }
 
         private void btnModifieds_Click(object sender, EventArgs e)
         {
-            _docProRep.GetModifieds();
+            lstDoctorProfiles.DataSource = _docProRep.GetModifieds();
         }
     }
 }

@@ -48,7 +48,8 @@ namespace HospitalSystem.WinFormUI
 
         private void lstDoctors_Click(object sender, EventArgs e)
         {
-            if (lstDoctors.SelectedItem != null) _selected = lstDoctors.SelectedItem as Doctor;
+            if(lstDoctors.SelectedItem != null) _selected = lstDoctors.SelectedItem as Doctor;
+
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -85,22 +86,23 @@ namespace HospitalSystem.WinFormUI
 
         private void btnGetAll_Click(object sender, EventArgs e)
         {
-            _docRep.GetAll();
+            lstDoctors.DataSource = _docRep.GetAll();
         }
 
         private void btnActives_Click(object sender, EventArgs e)
         {
-            _docRep.GetActives();
+            lstDoctors.DataSource = _docRep.GetActives();
         }
 
         private void btnPassives_Click(object sender, EventArgs e)
         {
-            _docRep.GetPassives();
+            lstDoctors.DataSource = _docRep.GetPassives();
         }
 
         private void btnModifieds_Click(object sender, EventArgs e)
         {
-            _docRep.GetModifieds();
+            lstDoctors.DataSource = _docRep.GetModifieds();
         }
+
     }
 }

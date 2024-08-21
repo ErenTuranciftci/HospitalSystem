@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurations\AdminConfiguration.cs" />
     <Compile Include="Configurations\AppointmentConfiguration.cs" />
     <Compile Include="Configurations\BaseConfiguration.cs" />
     <Compile Include="Configurations\DepartmentConfiguration.cs" />

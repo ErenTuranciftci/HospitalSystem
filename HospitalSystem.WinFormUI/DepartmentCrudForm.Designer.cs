@@ -39,6 +39,8 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnGetAll = new System.Windows.Forms.Button();
             this.btnDestory = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnModifieds
@@ -155,11 +157,31 @@
             this.btnDestory.UseVisualStyleBackColor = true;
             this.btnDestory.Click += new System.EventHandler(this.btnDestory_Click);
             // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(48, 75);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 23);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Description";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(48, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 23);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "DepartmentName";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // DepartmentCrudForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnModifieds);
             this.Controls.Add(this.btnDestory);
             this.Controls.Add(this.btnDelete);
@@ -192,6 +214,8 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Button btnGetAll;
         private System.Windows.Forms.Button btnDestory;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
 

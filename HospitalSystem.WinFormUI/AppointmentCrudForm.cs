@@ -94,7 +94,7 @@ namespace HospitalSystem.WinFormUI
                             Appointment app = new Appointment();
                             app.StartDate = dateTmp.AddHours(i);
                             app.DoctorID = doctorTmp.ID;
-                            _appRep.add(app);
+                            _appRep.Add(app);
                             lstAppointments.Items.Add(app);
                         }
                     }
