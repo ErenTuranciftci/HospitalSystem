@@ -104,11 +104,23 @@
     <Compile Include="PatientCrudForm.Designer.cs">
       <DependentUpon>PatientCrudForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PatientMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientMainForm.Designer.cs">
+      <DependentUpon>PatientMainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PatientProfileCrudForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PatientProfileCrudForm.Designer.cs">
       <DependentUpon>PatientProfileCrudForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientUpdateProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientUpdateProfileForm.Designer.cs">
+      <DependentUpon>PatientUpdateProfileForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -136,8 +148,14 @@
     <EmbeddedResource Include="PatientCrudForm.resx">
       <DependentUpon>PatientCrudForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PatientMainForm.resx">
+      <DependentUpon>PatientMainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PatientProfileCrudForm.resx">
       <DependentUpon>PatientProfileCrudForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientUpdateProfileForm.resx">
+      <DependentUpon>PatientUpdateProfileForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
