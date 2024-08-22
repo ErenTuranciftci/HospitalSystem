@@ -16,7 +16,7 @@ namespace HospitalSystem.WinFormUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TestPatient());
+            Application.Run(new AdminPanelForm());
         }
     }
 }
