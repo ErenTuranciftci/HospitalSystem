@@ -86,6 +86,12 @@
     <Compile Include="DoctorCrudForm.Designer.cs">
       <DependentUpon>DoctorCrudForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DoctorMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoctorMainForm.Designer.cs">
+      <DependentUpon>DoctorMainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DoctorProfileCrudForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DoctorCrudForm.resx">
       <DependentUpon>DoctorCrudForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoctorMainForm.resx">
+      <DependentUpon>DoctorMainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DoctorProfileCrudForm.resx">
       <DependentUpon>DoctorProfileCrudForm.cs</DependentUpon>
