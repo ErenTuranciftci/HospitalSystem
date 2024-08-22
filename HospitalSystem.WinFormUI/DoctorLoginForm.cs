@@ -12,31 +12,34 @@ using System.Windows.Forms;
 
 namespace HospitalSystem.WinFormUI
 {
-	public partial class AdminLoginForm : Form
+	public partial class doctorLoginForm : Form
 	{
-		AdminRepository _admRep;
-		public AdminLoginForm()
+		DoctorRepository _docRep;
+		public doctorLoginForm()
 		{
 			InitializeComponent();
-			_admRep = new AdminRepository();
+			_docRep = new DoctorRepository();
 		}
-		// sifre işlemleri basarili ise AdminPanelForm'a yönlendirilme yapılıyor.
-		private void btnAdminLogin_Click(object sender, EventArgs e)
-		{
-			string username = txtUserName.Text.Trim();
-			string password = txtUserPassword.Text.Trim();
 
-			if (username.Length > 0 && password.Length > 0)
+		// sifre işlemleri basarili ise DoctorProfileCrudForm yönlendirilme yapılıyor
+		private void btnDoctorLogin_Click(object sender, EventArgs e)
+		{
+			string username=txtUserName.Text.Trim();
+			string password=txtUserPassword.Text.Trim();
+
+			if (username.Length > 0 && password.Length > 0) 
 			{
-				List<Admin> admins = _admRep.Where(x => x.UserName == username && x.Password == password);
-				if (admins.Count() > 0)
+
+				List<Doctor> doctors = _docRep.Where(x => x.UserName == username && x.Password == password);
+				if(doctors.Count() > 0)
 				{
-                    AdminPanelForm adminPanelForm = new AdminPanelForm();
+					DoctorProfileCrudForm doctorProfileCrudForm = new DoctorProfileCrudForm(); 
 					MessageBox.Show($"Giriş Başarılı", "Tebrikler", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					this.Hide();
-					adminPanelForm.ShowDialog();
+					doctorProfileCrudForm.Show();
 				}
 				else MessageBox.Show("Kullanıcı Adı veya Parolanız yanlış...\nLütfen yeniden deneyiniz...", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+
 			}
 			else MessageBox.Show("Kullanıcı Adı veya Parola alanları boş geçilemez..\nLütfen yeniden deneyiniz...", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Hand);
 		}

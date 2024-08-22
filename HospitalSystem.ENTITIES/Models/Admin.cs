@@ -8,5 +8,10 @@ namespace HospitalSystem.ENTITIES.Models
 {
     public class Admin : BaseUser
     {
-    }
+
+		public override string ToString()
+		{
+			return $" {UserName} {Password}";
+		}
+	}
 }

@@ -42,6 +42,7 @@
 			this.btnDoctorLogin.TabIndex = 9;
 			this.btnDoctorLogin.Text = "Doktor Girişi";
 			this.btnDoctorLogin.UseVisualStyleBackColor = true;
+			this.btnDoctorLogin.Click += new System.EventHandler(this.btnDoctorLogin_Click);
 			// 
 			// btnPatientLogin
 			// 
@@ -51,6 +52,7 @@
 			this.btnPatientLogin.TabIndex = 8;
 			this.btnPatientLogin.Text = "Hasta Girişi";
 			this.btnPatientLogin.UseVisualStyleBackColor = true;
+			this.btnPatientLogin.Click += new System.EventHandler(this.btnPatientLogin_Click);
 			// 
 			// btnAdminLogin
 			// 
@@ -65,9 +67,10 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(191, 119);
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+			this.label1.Location = new System.Drawing.Point(101, 115);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(238, 13);
+			this.label1.Size = new System.Drawing.Size(442, 25);
 			this.label1.TabIndex = 6;
 			this.label1.Text = "Lütfen Aşağıdan yapmak istediğiniz işlemi seciniz.";
 			// 

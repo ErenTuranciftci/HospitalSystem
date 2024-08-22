@@ -92,6 +92,12 @@
     <Compile Include="DoctorCrudForm.Designer.cs">
       <DependentUpon>DoctorCrudForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DoctorLoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoctorLoginForm.Designer.cs">
+      <DependentUpon>DoctorLoginForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DoctorMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,12 @@
     </Compile>
     <Compile Include="PatientCrudForm.Designer.cs">
       <DependentUpon>PatientCrudForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientLoginFom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientLoginFom.Designer.cs">
+      <DependentUpon>PatientLoginFom.cs</DependentUpon>
     </Compile>
     <Compile Include="PatientMainForm.cs">
       <SubType>Form</SubType>
@@ -166,6 +178,9 @@
     <EmbeddedResource Include="DoctorCrudForm.resx">
       <DependentUpon>DoctorCrudForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DoctorLoginForm.resx">
+      <DependentUpon>DoctorLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DoctorMainForm.resx">
       <DependentUpon>DoctorMainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PatientCrudForm.resx">
       <DependentUpon>PatientCrudForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientLoginFom.resx">
+      <DependentUpon>PatientLoginFom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PatientMainForm.resx">
       <DependentUpon>PatientMainForm.cs</DependentUpon>
