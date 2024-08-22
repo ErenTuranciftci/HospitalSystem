@@ -14,29 +14,31 @@ namespace HospitalSystem.WinFormUI
 {
 	public partial class AdminLoginForm : Form
 	{
-		Admin _admin;
 		AdminRepository _admRep;
 		public AdminLoginForm()
 		{
 			InitializeComponent();
-			_admin = (new AdminRepository()).Find(1);
+			_admRep = new AdminRepository();
 		}
 
 		private void btnAdminLogin_Click(object sender, EventArgs e)
 		{
+			string username = txtUserName.Text.Trim();
+			string password = txtUserPassword.Text.Trim();
 
-			if (txtUserName.Text == _admin.UserName && txtUserPassword.Text == _admin.Password)
+			if (username.Length > 0 && password.Length > 0)
 			{
-
-				AdminPanelForm adminPanelForm = new AdminPanelForm();
-				MessageBox.Show($"Giriş Başarılı", "Tebrikler", MessageBoxButtons.OK, MessageBoxIcon.Information);
-				this.Hide();
-				adminPanelForm.ShowDialog();
+				List<Admin> admins = _admRep.Where(x => x.UserName == username && x.Password == password);
+				if (admins.Count() > 0)
+				{
+                    AdminPanelForm adminPanelForm = new AdminPanelForm();
+					MessageBox.Show($"Giriş Başarılı", "Tebrikler", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					this.Hide();
+					adminPanelForm.ShowDialog();
+				}
+				else MessageBox.Show("Kullanıcı Adı veya Parolanız yanlış...\nLütfen yeniden deneyiniz...", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Hand);
 			}
-			else
-			{
-				MessageBox.Show("Kullanıcı Adı veya Paralanız yanlış...\nLütfen yeniden deneyiniz...", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-			}
+			else MessageBox.Show("Kullanıcı Adı veya Parola alanları boş geçilemez..\nLütfen yeniden deneyiniz...", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Hand);
 		}
 
 		private void cbxGoster_CheckedChanged(object sender, EventArgs e)
