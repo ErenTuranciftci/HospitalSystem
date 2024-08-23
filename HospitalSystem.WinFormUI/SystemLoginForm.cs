@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace HospitalSystem.WinFormUI
 {
-	public partial class SystemLogin : Form
+	public partial class SystemLoginForm : Form
 	{
-		public SystemLogin()
+		public SystemLoginForm()
 		{
 			InitializeComponent();
 		}
@@ -26,7 +26,7 @@ namespace HospitalSystem.WinFormUI
 
 		private void btnDoctorLogin_Click(object sender, EventArgs e)
 		{
-			doctorLoginForm doctorLoginForm = new doctorLoginForm();
+			DoctorLoginForm doctorLoginForm = new DoctorLoginForm();
 			this.Hide();
 			doctorLoginForm.ShowDialog();
 		}

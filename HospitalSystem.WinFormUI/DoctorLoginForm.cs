@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace HospitalSystem.WinFormUI
 {
-	public partial class doctorLoginForm : Form
+	public partial class DoctorLoginForm : Form
 	{
 		DoctorRepository _docRep;
-		public doctorLoginForm()
+		public DoctorLoginForm()
 		{
 			InitializeComponent();
 			_docRep = new DoctorRepository();

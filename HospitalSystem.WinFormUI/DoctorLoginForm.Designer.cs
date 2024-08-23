@@ -1,6 +1,6 @@
 ﻿namespace HospitalSystem.WinFormUI
 {
-	partial class doctorLoginForm
+	partial class DoctorLoginForm
 	{
 		/// <summary>
 		/// Required designer variable.
