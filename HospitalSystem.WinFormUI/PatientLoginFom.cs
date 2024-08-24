@@ -33,7 +33,8 @@ namespace HospitalSystem.WinFormUI
 
 				if (patients.Count > 0)
 				{
-					PatientCrudForm patientCrudForm = new PatientCrudForm();
+					Patient patient = patients[0];
+					PatientMainForm patientCrudForm = new PatientMainForm(patient);
 					MessageBox.Show($"Giriş Başarılı", "Tebrikler", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					this.Hide();
 					patientCrudForm.Show();

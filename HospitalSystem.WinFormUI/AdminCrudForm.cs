@@ -52,7 +52,7 @@ namespace HospitalSystem.WinFormUI
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (_selected == null)
+            if (_selected != null)
             {
                 _selected.UserName = txtUserName.Text;
                 _selected.Password = txtPassword.Text;
@@ -64,7 +64,7 @@ namespace HospitalSystem.WinFormUI
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (_selected != null)
+            if (_selected != null && _admRep.GetActives().Count > 1)
             {
                 _admRep.Delete(_selected);
                 _selected = null;

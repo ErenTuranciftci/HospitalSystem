@@ -55,7 +55,7 @@
             this.btnPatientCrud.Name = "btnPatientCrud";
             this.btnPatientCrud.Size = new System.Drawing.Size(116, 23);
             this.btnPatientCrud.TabIndex = 1;
-            this.btnPatientCrud.Text = "PatientCrudd";
+            this.btnPatientCrud.Text = "PatientCrud";
             this.btnPatientCrud.UseVisualStyleBackColor = true;
             this.btnPatientCrud.Click += new System.EventHandler(this.btnPatientCrud_Click);
             // 

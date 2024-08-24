@@ -15,6 +15,7 @@ namespace HospitalSystem.WinFormUI
 	public partial class DoctorLoginForm : Form
 	{
 		DoctorRepository _docRep;
+
 		public DoctorLoginForm()
 		{
 			InitializeComponent();
@@ -33,7 +34,8 @@ namespace HospitalSystem.WinFormUI
 				List<Doctor> doctors = _docRep.Where(x => x.UserName == username && x.Password == password);
 				if(doctors.Count() > 0)
 				{
-					DoctorProfileCrudForm doctorProfileCrudForm = new DoctorProfileCrudForm(); 
+					Doctor doctor = doctors[0];
+					DoctorMainForm doctorProfileCrudForm = new DoctorMainForm(doctor); 
 					MessageBox.Show($"Giriş Başarılı", "Tebrikler", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					this.Hide();
 					doctorProfileCrudForm.Show();
