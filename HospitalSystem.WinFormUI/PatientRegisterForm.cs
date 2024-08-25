@@ -48,6 +48,7 @@ namespace HospitalSystem.WinFormUI
             _patient.PatientProfile = _patProfile;
             _patRep.Add(_patient);
             MessageBox.Show("Registration successful!");
+            Close();
         }
     }
 }
