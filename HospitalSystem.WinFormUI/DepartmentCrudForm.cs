@@ -34,13 +34,16 @@ namespace HospitalSystem.WinFormUI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Department d = new Department()
+            if(txtName.Text.Trim().Length > 0 && txtDescription.Text.Trim().Length > 0)
             {
-                DepartmanName=txtName.Text,
-                Description=txtDescription.Text,
-            };
-            _depRep.Add(d);
-            Listele();
+                Department d = new Department()
+                {
+                    DepartmentName = txtName.Text.Trim(),
+                    Description = txtDescription.Text.Trim(),
+                };
+                _depRep.Add(d);
+                Listele();
+            } else MessageBox.Show("DepartmentName and Description fields cannot be left blank.\r\nThe transaction could not be completed");
         }
 
         Department _selected;
@@ -54,8 +57,8 @@ namespace HospitalSystem.WinFormUI
         {
             if (_selected != null)
             {
-                _selected.DepartmanName = txtName.Text;
-                _selected.Description = txtDescription.Text;
+                _selected.DepartmentName = txtName.Text.Trim();
+                _selected.Description = txtDescription.Text.Trim();
                 _depRep.Update(_selected);
                 _selected = null;
                 Listele();

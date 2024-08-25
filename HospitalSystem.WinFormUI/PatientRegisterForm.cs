@@ -22,22 +22,24 @@ namespace HospitalSystem.WinFormUI
         {
             InitializeComponent();
             _patRep = new PatientRepository();
-            _patient = new Patient();
-            _patProfile = new PatientProfile();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+
             if (txtUserName.Text.Trim().Length == 0 || txtPassword.Text.Trim().Length == 0) 
             {
-                MessageBox.Show("Username ve Password alanları boş geçilemez.\r\nKayıt işlemi başarısız");
+                MessageBox.Show("Username and Password fields cannot be left blank.\r\nThe transaction could not be completed");
                 return;
             }
             else
             {
+                _patient = new Patient();
                 _patient.UserName = txtUserName.Text.Trim();
                 _patient.Password = txtPassword.Text.Trim();
             }
+
+            _patProfile = new PatientProfile();
             if (txtName.Text.Trim().Length > 0) _patProfile.Name = txtName.Text.Trim();
             if(txtSurname.Text.Trim().Length > 0) _patProfile.Surname = txtSurname.Text.Trim();
             if(txtTCKNo.Text.Trim().Length > 0) _patProfile.TCKNo = txtTCKNo.Text.Trim();
@@ -45,7 +47,7 @@ namespace HospitalSystem.WinFormUI
             if(txtEmail.Text.Trim().Length > 0) _patProfile.Email = txtEmail.Text.Trim();
             _patient.PatientProfile = _patProfile;
             _patRep.Add(_patient);
-            MessageBox.Show("Kayıt işlemi başarılı!");
+            MessageBox.Show("Registration successful!");
         }
     }
 }

@@ -50,6 +50,7 @@
             this.cmbDates.Name = "cmbDates";
             this.cmbDates.Size = new System.Drawing.Size(211, 24);
             this.cmbDates.TabIndex = 0;
+            this.cmbDates.SelectedIndexChanged += new System.EventHandler(this.cmbDates_SelectedIndexChanged);
             // 
             // label1
             // 

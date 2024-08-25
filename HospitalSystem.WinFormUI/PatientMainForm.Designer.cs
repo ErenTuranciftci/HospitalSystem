@@ -178,7 +178,7 @@
             this.btnPatientAppointment.Name = "btnPatientAppointment";
             this.btnPatientAppointment.Size = new System.Drawing.Size(202, 50);
             this.btnPatientAppointment.TabIndex = 6;
-            this.btnPatientAppointment.Text = "Go to the patient appointments webpage!";
+            this.btnPatientAppointment.Text = "Go to the patient appointments form!";
             this.btnPatientAppointment.UseVisualStyleBackColor = true;
             this.btnPatientAppointment.Click += new System.EventHandler(this.btnPatientAppointment_Click);
             // 

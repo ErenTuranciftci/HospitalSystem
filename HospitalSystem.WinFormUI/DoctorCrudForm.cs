@@ -35,13 +35,16 @@ namespace HospitalSystem.WinFormUI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Doctor d = new Doctor()
+            if(txtUserName.Text.Trim().Length > 0 && txtPassword.Text.Trim().Length > 0)
             {
-                UserName = txtUserName.Text,
-                Password = txtPassword.Text,
-            };
-            _docRep.Add(d);
-            Listele();
+                Doctor d = new Doctor()
+                {
+                    UserName = txtUserName.Text.Trim(),
+                    Password = txtPassword.Text.Trim(),
+                };
+                _docRep.Add(d);
+                Listele();
+            } else MessageBox.Show("Username and Password fields cannot be left blank.\r\nThe transaction could not be completed");
         }
 
         Doctor _selected;
@@ -56,8 +59,8 @@ namespace HospitalSystem.WinFormUI
         {
             if (_selected != null)
             {
-                _selected.UserName = txtUserName.Text;
-                _selected.Password = txtPassword.Text;
+                _selected.UserName = txtUserName.Text.Trim();
+                _selected.Password = txtPassword.Text.Trim();
                 _docRep.Update(_selected);
                 _selected = null;
                 Listele();

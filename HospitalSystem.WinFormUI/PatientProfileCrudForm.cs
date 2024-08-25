@@ -47,37 +47,45 @@ namespace HospitalSystem.WinFormUI
         private void cmbPatients_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbPatients.SelectedItem != null) _selectedPat = cmbPatients.SelectedItem as Patient;
+            else _selectedPat = null;
         }
         
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (_selectedPat == null)
             {
-                MessageBox.Show("Lütfen bir doktor seçin.");
+                MessageBox.Show("Please choose a patient.");
                 return;
             }
-            PatientProfile dP = new PatientProfile()
+
+            if(txtName.Text.Trim().Length > 0 && txtSurname.Text.Trim().Length > 0 && txtTCKNo.Text.Trim().Length > 0)
             {
-                Name = txtName.Text,
-                Surname = txtSurname.Text,
-                Email = txtEmail.Text,
-                Phone = txtPhone.Text,
-                TCKNo = txtTCKNo.Text,
-                Patient = _selectedPat                
-            };
-            _patProRep.Add(dP);
-            _selectedPat = null;            
-            Listele();
+               
+                PatientProfile dP = new PatientProfile()
+                {
+                    Name = txtName.Text.Trim(),
+                    Surname = txtSurname.Text.Trim(),
+                    Email = txtEmail.Text.Trim(),
+                    Phone = txtPhone.Text.Trim(),
+                    TCKNo = txtTCKNo.Text.Trim(),
+                    Patient = _selectedPat
+                };
+                _patProRep.Add(dP);
+                _selectedPat = null;
+                Listele();
+            }
+            else MessageBox.Show("Name, Surname and TCKNo fields cannot be left blank.\r\nThe transaction could not be completed");
+
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (_selectedPatPro != null && _selectedPat != null)
             {
-                _selectedPatPro.Name = txtName.Text;
-                _selectedPatPro.Email = txtEmail.Text;
-                _selectedPatPro.Email = txtEmail.Text;
-                _selectedPatPro.Phone = txtPhone.Text;
+                _selectedPatPro.Name = txtName.Text.Trim();
+                _selectedPatPro.Email = txtEmail.Text.Trim();
+                _selectedPatPro.Email = txtEmail.Text.Trim();
+                _selectedPatPro.Phone = txtPhone.Text.Trim();
                 _selectedPatPro.Patient = _selectedPat;                
 
                 _patProRep.Update(_selectedPatPro);

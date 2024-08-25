@@ -42,18 +42,20 @@
             // 
             this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(182, 26);
+            this.label1.Location = new System.Drawing.Point(243, 32);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(380, 80);
+            this.label1.Size = new System.Drawing.Size(507, 98);
             this.label1.TabIndex = 0;
             this.label1.Text = "Admin Panel";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnPatientCrud
             // 
-            this.btnPatientCrud.Location = new System.Drawing.Point(261, 146);
+            this.btnPatientCrud.Location = new System.Drawing.Point(348, 180);
+            this.btnPatientCrud.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPatientCrud.Name = "btnPatientCrud";
-            this.btnPatientCrud.Size = new System.Drawing.Size(116, 23);
+            this.btnPatientCrud.Size = new System.Drawing.Size(155, 28);
             this.btnPatientCrud.TabIndex = 1;
             this.btnPatientCrud.Text = "PatientCrud";
             this.btnPatientCrud.UseVisualStyleBackColor = true;
@@ -61,9 +63,10 @@
             // 
             // btnDoctorCrud
             // 
-            this.btnDoctorCrud.Location = new System.Drawing.Point(389, 146);
+            this.btnDoctorCrud.Location = new System.Drawing.Point(519, 180);
+            this.btnDoctorCrud.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDoctorCrud.Name = "btnDoctorCrud";
-            this.btnDoctorCrud.Size = new System.Drawing.Size(116, 23);
+            this.btnDoctorCrud.Size = new System.Drawing.Size(155, 28);
             this.btnDoctorCrud.TabIndex = 1;
             this.btnDoctorCrud.Text = "DoctorCrud";
             this.btnDoctorCrud.UseVisualStyleBackColor = true;
@@ -71,9 +74,10 @@
             // 
             // btnPatientProfileCrud
             // 
-            this.btnPatientProfileCrud.Location = new System.Drawing.Point(261, 196);
+            this.btnPatientProfileCrud.Location = new System.Drawing.Point(348, 241);
+            this.btnPatientProfileCrud.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPatientProfileCrud.Name = "btnPatientProfileCrud";
-            this.btnPatientProfileCrud.Size = new System.Drawing.Size(116, 23);
+            this.btnPatientProfileCrud.Size = new System.Drawing.Size(155, 28);
             this.btnPatientProfileCrud.TabIndex = 1;
             this.btnPatientProfileCrud.Text = "PatientProfileCrud";
             this.btnPatientProfileCrud.UseVisualStyleBackColor = true;
@@ -81,19 +85,21 @@
             // 
             // btnDoctorProfileCrud
             // 
-            this.btnDoctorProfileCrud.Location = new System.Drawing.Point(389, 196);
+            this.btnDoctorProfileCrud.Location = new System.Drawing.Point(519, 241);
+            this.btnDoctorProfileCrud.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDoctorProfileCrud.Name = "btnDoctorProfileCrud";
-            this.btnDoctorProfileCrud.Size = new System.Drawing.Size(116, 23);
+            this.btnDoctorProfileCrud.Size = new System.Drawing.Size(155, 28);
             this.btnDoctorProfileCrud.TabIndex = 1;
-            this.btnDoctorProfileCrud.Text = "DoctorProfileCrub";
+            this.btnDoctorProfileCrud.Text = "DoctorProfileCrud";
             this.btnDoctorProfileCrud.UseVisualStyleBackColor = true;
             this.btnDoctorProfileCrud.Click += new System.EventHandler(this.btnDoctorProfileCrud_Click);
             // 
             // btnAppointmentCrud
             // 
-            this.btnAppointmentCrud.Location = new System.Drawing.Point(261, 253);
+            this.btnAppointmentCrud.Location = new System.Drawing.Point(348, 311);
+            this.btnAppointmentCrud.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAppointmentCrud.Name = "btnAppointmentCrud";
-            this.btnAppointmentCrud.Size = new System.Drawing.Size(116, 23);
+            this.btnAppointmentCrud.Size = new System.Drawing.Size(155, 28);
             this.btnAppointmentCrud.TabIndex = 1;
             this.btnAppointmentCrud.Text = "AppointmentCrud";
             this.btnAppointmentCrud.UseVisualStyleBackColor = true;
@@ -101,9 +107,10 @@
             // 
             // btnDepartmentCrud
             // 
-            this.btnDepartmentCrud.Location = new System.Drawing.Point(389, 253);
+            this.btnDepartmentCrud.Location = new System.Drawing.Point(519, 311);
+            this.btnDepartmentCrud.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDepartmentCrud.Name = "btnDepartmentCrud";
-            this.btnDepartmentCrud.Size = new System.Drawing.Size(116, 23);
+            this.btnDepartmentCrud.Size = new System.Drawing.Size(155, 28);
             this.btnDepartmentCrud.TabIndex = 1;
             this.btnDepartmentCrud.Text = "DepartmentCrud";
             this.btnDepartmentCrud.UseVisualStyleBackColor = true;
@@ -111,9 +118,10 @@
             // 
             // btnAdminCrud
             // 
-            this.btnAdminCrud.Location = new System.Drawing.Point(323, 307);
+            this.btnAdminCrud.Location = new System.Drawing.Point(431, 378);
+            this.btnAdminCrud.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdminCrud.Name = "btnAdminCrud";
-            this.btnAdminCrud.Size = new System.Drawing.Size(116, 23);
+            this.btnAdminCrud.Size = new System.Drawing.Size(155, 28);
             this.btnAdminCrud.TabIndex = 1;
             this.btnAdminCrud.Text = "AdminCrud";
             this.btnAdminCrud.UseVisualStyleBackColor = true;
@@ -121,9 +129,9 @@
             // 
             // AdminPanelForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.btnDoctorProfileCrud);
             this.Controls.Add(this.btnAdminCrud);
             this.Controls.Add(this.btnDepartmentCrud);
@@ -132,6 +140,7 @@
             this.Controls.Add(this.btnDoctorCrud);
             this.Controls.Add(this.btnPatientCrud);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AdminPanelForm";
             this.Text = "AdminPanelForm";
             this.ResumeLayout(false);

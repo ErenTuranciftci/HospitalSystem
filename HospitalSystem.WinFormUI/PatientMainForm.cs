@@ -44,7 +44,7 @@ namespace HospitalSystem.WinFormUI
                     lblName.Text = lblSurname.Text = lblTCKNo.Text = lblPhone.Text = lblEmail.Text = "-";
                 }
             }
-            else throw new Exception("PatientMainForm'daki _authPatient değişkeninin değeri null geldi. Authentication işlemi başarısız.");
+            else throw new Exception("The value of the _authPatient variable in PatientMainForm is null. Authentication failed.");
 
         }
 
@@ -60,14 +60,18 @@ namespace HospitalSystem.WinFormUI
 
         private void btnPatientAppointment_Click(object sender, EventArgs e)
         {
-            PatientAppointmentForm frm = new PatientAppointmentForm(_authPatient);
-            frm.ShowDialog();
+            Hide();
+            PatientAppointmentForm patientAppointmentForm = new PatientAppointmentForm(_authPatient);
+            patientAppointmentForm.ShowDialog();
+            Show();
         }
 
         private void btnUpdateProfile_Click(object sender, EventArgs e)
         {
-            PatientUpdateProfileForm frm = new PatientUpdateProfileForm(_authPatient);
-            frm.ShowDialog();
+            Hide();
+            PatientUpdateProfileForm patientUpdateProfileForm = new PatientUpdateProfileForm(_authPatient);
+            patientUpdateProfileForm.ShowDialog();
+            Show();
         }
     }
 }

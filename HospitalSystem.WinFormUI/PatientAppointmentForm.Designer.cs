@@ -95,9 +95,9 @@
             // 
             this.lstAppointments.FormattingEnabled = true;
             this.lstAppointments.ItemHeight = 16;
-            this.lstAppointments.Location = new System.Drawing.Point(453, 59);
+            this.lstAppointments.Location = new System.Drawing.Point(461, 72);
             this.lstAppointments.Name = "lstAppointments";
-            this.lstAppointments.Size = new System.Drawing.Size(281, 308);
+            this.lstAppointments.Size = new System.Drawing.Size(352, 340);
             this.lstAppointments.TabIndex = 6;
             // 
             // btnMakeAnApp
@@ -123,9 +123,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(518, 29);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Location = new System.Drawing.Point(485, 26);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(133, 16);
+            this.label4.Size = new System.Drawing.Size(275, 29);
             this.label4.TabIndex = 8;
             this.label4.Text = "Patient Appointments";
             // 

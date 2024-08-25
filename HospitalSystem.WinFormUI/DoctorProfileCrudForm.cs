@@ -65,33 +65,37 @@ namespace HospitalSystem.WinFormUI
         {
             if (_selectedDep == null || _selectedDoc == null)
             {
-                MessageBox.Show("Lütfen bir departman ve doktor seçin.");
+                MessageBox.Show("Please select a department and doctor.");
                 return;
             }
-            DoctorProfile dP = new DoctorProfile()
+            if (txtName.Text.Trim().Length > 0 && txtSurname.Text.Trim().Length > 0)
             {
-                Name = txtName.Text,
-                Surname = txtSurname.Text,
-                Email = txtEmail.Text,
-                Phone = txtPhone.Text,
-                Department = _selectedDep,
-                Doctor = _selectedDoc,
-                DepartmentID = _selectedDep.ID
-            };
-            _docProRep.Add(dP);
-            _selectedDoc = null;
-            _selectedDep = null;
-            Listele();
+                DoctorProfile dP = new DoctorProfile()
+                {
+                    Name = txtName.Text.Trim(),
+                    Surname = txtSurname.Text.Trim(),
+                    Email = txtEmail.Text.Trim(),
+                    Phone = txtPhone.Text.Trim(),
+                    Department = _selectedDep,
+                    Doctor = _selectedDoc,
+                    DepartmentID = _selectedDep.ID
+                };
+                _docProRep.Add(dP);
+                _selectedDoc = null;
+                _selectedDep = null;
+                Listele();
+            }
+            else MessageBox.Show("Name and Surname fields cannot be left blank.\r\nThe transaction could not be completed");
         }        
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (_selectedDocPro != null && _selectedDep != null)
             {
-                _selectedDocPro.Name = txtName.Text;
-                _selectedDocPro.Email = txtEmail.Text;
-                _selectedDocPro.Email = txtEmail.Text;
-                _selectedDocPro.Phone = txtPhone.Text;
+                _selectedDocPro.Name = txtName.Text.Trim();
+                _selectedDocPro.Email = txtEmail.Text.Trim();
+                _selectedDocPro.Email = txtEmail.Text.Trim();
+                _selectedDocPro.Phone = txtPhone.Text.Trim();
                 _selectedDocPro.Department = _selectedDep;
                 _selectedDocPro.DepartmentID = _selectedDep.ID;
 

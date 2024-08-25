@@ -91,7 +91,6 @@ namespace HospitalSystem.WinFormUI
                 ListLstApp();
                 ListCmbDates();
             }
-
         }
     }
 }

@@ -19,23 +19,26 @@ namespace HospitalSystem.WinFormUI
 
 		private void btnAdminLogin_Click(object sender, EventArgs e)
 		{
+			Hide();
 			AdminLoginForm adminLoginForm = new AdminLoginForm();
-			this.Hide();
 			adminLoginForm.ShowDialog();
+			Show();
 		}
 
 		private void btnDoctorLogin_Click(object sender, EventArgs e)
 		{
+			Hide();
 			DoctorLoginForm doctorLoginForm = new DoctorLoginForm();
-			this.Hide();
 			doctorLoginForm.ShowDialog();
+			Show();
 		}
 
 		private void btnPatientLogin_Click(object sender, EventArgs e)
 		{
-			PatientLoginFom patientLoginFom = new PatientLoginFom();
-			this.Hide();	
+			Hide();
+			PatientLoginFom patientLoginFom = new PatientLoginFom();	
 			patientLoginFom.ShowDialog();
+			Show();
 		}
 	}
 }

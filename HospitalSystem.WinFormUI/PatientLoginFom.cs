@@ -24,29 +24,30 @@ namespace HospitalSystem.WinFormUI
 		// sifre işlemleri basarili ise PatientCrudForm'a yönlendirilme yapılıyor.
 		private void btnPatientLogin_Click(object sender, EventArgs e)
 		{
-			string username = txtUserName.Text;
-			string password = txtUserPassword.Text;
+			string username = txtUserName.Text.Trim();
+			string password = txtUserPassword.Text.Trim();
 
 			if (username.Length > 0 && password.Length > 0)
 			{
-				List<Patient> patients = _patRep.Where(x => x.UserName == username && x.Password == password);
+				List<Patient> patients = _patRep.Where(x => x.UserName == username && x.Password == password && x.DataStatus != ENTITIES.Enums.DataStatus.Deleted);
 
 				if (patients.Count > 0)
 				{
-					Patient patient = patients[0];
-					PatientMainForm patientCrudForm = new PatientMainForm(patient);
-					MessageBox.Show($"Giriş Başarılı", "Tebrikler", MessageBoxButtons.OK, MessageBoxIcon.Information);
-					this.Hide();
-					patientCrudForm.Show();
+					
+                    MessageBox.Show($"Login successful", "Congratulations", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					Hide();
+                    txtUserName.Text = txtUserPassword.Text = string.Empty;
+                    PatientMainForm patientCrudForm = new PatientMainForm(patients[0]);
+                    patientCrudForm.ShowDialog();
+					Show();
 				}
 				else
 				{
-					MessageBox.Show("Kullanıcı Adı veya Parolanız yanlış...\nLütfen yeniden deneyiniz...", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-				}
+                    MessageBox.Show("Your Username or Password is incorrect.\r\nPlease try again...", "Info", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                }
 			}
-
-			else MessageBox.Show("Kullanıcı Adı veya Parola alanları boş geçilemez..\nLütfen yeniden deneyiniz...", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-		}
+			else MessageBox.Show("Username or Password fields cannot be empty.\r\nPlease try again...", "Info", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+        }
 
 		private void cbxGoster_CheckedChanged(object sender, EventArgs e)
 		{
@@ -55,10 +56,16 @@ namespace HospitalSystem.WinFormUI
 				txtUserPassword.UseSystemPasswordChar = true;
 
 			}
-			else if (cbxGoster.CheckState == CheckState.Unchecked)
-			{
-				txtUserPassword.UseSystemPasswordChar = false;
-			}
+			else txtUserPassword.UseSystemPasswordChar = false;
 		}
-	}
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+			Hide();
+            txtUserName.Text = txtUserPassword.Text = string.Empty;
+            PatientRegisterForm patientRegisterForm = new PatientRegisterForm();
+			patientRegisterForm.ShowDialog();
+			Show();
+        }
+    }
 }

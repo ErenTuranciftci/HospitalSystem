@@ -28,17 +28,19 @@ namespace HospitalSystem.WinFormUI
 
 			if (username.Length > 0 && password.Length > 0)
 			{
-				List<Admin> admins = _admRep.Where(x => x.UserName == username && x.Password == password);
+				List<Admin> admins = _admRep.Where(x => x.UserName == username && x.Password == password && x.DataStatus != ENTITIES.Enums.DataStatus.Deleted);
 				if (admins.Count() > 0)
 				{
+                    MessageBox.Show($"Login successful", "Congratulations", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					Hide();
+                    txtUserName.Text = txtUserPassword.Text = string.Empty;
                     AdminPanelForm adminPanelForm = new AdminPanelForm();
-					MessageBox.Show($"Giriş Başarılı", "Tebrikler", MessageBoxButtons.OK, MessageBoxIcon.Information);
-					this.Hide();
-					adminPanelForm.ShowDialog();
+                    adminPanelForm.ShowDialog();
+					Show();
 				}
-				else MessageBox.Show("Kullanıcı Adı veya Parolanız yanlış...\nLütfen yeniden deneyiniz...", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+				else MessageBox.Show("Your Username or Password is incorrect.\r\nPlease try again...", "Info", MessageBoxButtons.OK, MessageBoxIcon.Hand);
 			}
-			else MessageBox.Show("Kullanıcı Adı veya Parola alanları boş geçilemez..\nLütfen yeniden deneyiniz...", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+			else MessageBox.Show("Username or Password fields cannot be empty.\r\nPlease try again...", "Info", MessageBoxButtons.OK, MessageBoxIcon.Hand);
 		}
 
 		private void cbxGoster_CheckedChanged(object sender, EventArgs e)
@@ -48,10 +50,7 @@ namespace HospitalSystem.WinFormUI
 				txtUserPassword.UseSystemPasswordChar = true;
 
 			}
-			else if (cbxGoster.CheckState == CheckState.Unchecked)
-			{
-				txtUserPassword.UseSystemPasswordChar = false;
-			}
+			else txtUserPassword.UseSystemPasswordChar = false;
 		}
 	}
 }

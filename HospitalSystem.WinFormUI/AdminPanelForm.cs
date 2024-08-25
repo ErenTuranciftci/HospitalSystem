@@ -19,44 +19,58 @@ namespace HospitalSystem.WinFormUI
 
         private void btnPatientCrud_Click(object sender, EventArgs e)
         {
-            PatientCrudForm form = new PatientCrudForm();
-            form.ShowDialog();
+            Hide();
+            PatientCrudForm patientCrudForm = new PatientCrudForm();
+            patientCrudForm.ShowDialog();
+            Show();
         }
 
         private void btnDoctorCrud_Click(object sender, EventArgs e)
         {
-            DoctorCrudForm form = new DoctorCrudForm();
-            form.ShowDialog();
+            Hide();
+            DoctorCrudForm doctorCrudForm = new DoctorCrudForm();
+            doctorCrudForm.ShowDialog();
+            Show();
         }
 
         private void btnPatientProfileCrud_Click(object sender, EventArgs e)
         {
-            PatientProfileCrudForm form = new PatientProfileCrudForm();
-            form.ShowDialog();
+            Hide();
+            PatientProfileCrudForm patientProfileCrudForm = new PatientProfileCrudForm();
+            patientProfileCrudForm.ShowDialog();
+            Show();
         }
 
         private void btnDoctorProfileCrud_Click(object sender, EventArgs e)
         {
-            DoctorProfileCrudForm form = new DoctorProfileCrudForm();
-            form.ShowDialog();
+            Hide();
+            DoctorProfileCrudForm doctorProfileCrudForm = new DoctorProfileCrudForm();
+            doctorProfileCrudForm.ShowDialog();
+            Show();
         }
 
         private void btnAppointmentCrud_Click(object sender, EventArgs e)
         {
-            AppointmentCrudForm form = new AppointmentCrudForm();
-            form.ShowDialog();
+            Hide();
+            AppointmentCrudForm appointmentCrudForm = new AppointmentCrudForm();
+            appointmentCrudForm.ShowDialog();
+            Show();
         }
 
         private void btnDepartmentCrud_Click(object sender, EventArgs e)
         {
-            DepartmentCrudForm form = new DepartmentCrudForm();
-            form.ShowDialog();
+            Hide();
+            DepartmentCrudForm departmentCrudForm = new DepartmentCrudForm();
+            departmentCrudForm.ShowDialog();
+            Show();
         }
 
         private void btnAdminCrud_Click(object sender, EventArgs e)
         {
-            AdminCrudForm form = new AdminCrudForm();
-            form.ShowDialog();
+            Hide();
+            AdminCrudForm adminCrudForm = new AdminCrudForm();
+            adminCrudForm.ShowDialog();
+            Show();
         }
     }
 }

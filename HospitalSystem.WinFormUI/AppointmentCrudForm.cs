@@ -18,23 +18,25 @@ namespace HospitalSystem.WinFormUI
         DoctorRepository _docRep;
         AppointmentRepository _appRep;
         Appointment _selectedAppointment;
+        int _startHour, _endHour;
 
         public AppointmentCrudForm()
         {
             InitializeComponent();
             _docRep = new DoctorRepository();
             _appRep = new AppointmentRepository();
+            _startHour = 9; //Randevu başlangıç saati 9:00
+            _endHour = 17;  //Randevu bitiş saati 17:00
         }
 
-
-        List<DateTime> GenerateDates(int dayCount = 30)  //dayCount parametresi default olarak 30 günlük dikkate alarak DateTime tipinde liste üretir.
+        List<DateTime> GenerateDates(int dayCount = 30)  //dayCount parametresi (default olarak 30 gün) hesaba katarak DateTime tipinde liste üretir.
         {
             List<DateTime> dates = new List<DateTime>();
             for (int i = 0; i < dayCount; i++)
             {
                 if (i == 0 && DateTime.Now > DateTime.Parse("16:00")) continue;  // Randevular hastanede 09:00-17:00 arasında birer saatlik dilimler şeklindedir. Bu yüzden Saat 16.00 yı geçmişse bugün randevu üretilemez. 
                 DateTime dateTmp = DateTime.Now.Date.AddDays(i);
-                if (dateTmp.DayOfWeek != DayOfWeek.Saturday && dateTmp.DayOfWeek != DayOfWeek.Sunday) dates.Add(dateTmp); //Cumartesi ve Pazar günleri de randevu alınamaz.
+                if (dateTmp.DayOfWeek != DayOfWeek.Saturday && dateTmp.DayOfWeek != DayOfWeek.Sunday) dates.Add(dateTmp); //Cumartesi ve Pazar günleri de tatil olduğu için randevu üretilemez.
             }
             return dates;
         }
@@ -42,7 +44,7 @@ namespace HospitalSystem.WinFormUI
         void SetControls ()
         {
             cmbDates.DataSource = GenerateDates();
-            cmbDoctors.DataSource = _docRep.GetAll();
+            cmbDoctors.DataSource = _docRep.GetActives();
             cmbDoctors.DisplayMember = "UserName";
             lstAppointments.DisplayMember = "StartDate";
             UpdateListbox();
@@ -50,8 +52,8 @@ namespace HospitalSystem.WinFormUI
 
         List<Appointment> ListAppointments(DateTime dateTmp, Doctor doctorTmp)
         {
-            DateTime startDateTmp = dateTmp.AddHours(9); // Saat 09:00 randevuya başlama
-            DateTime endDateTmp = dateTmp.AddHours(17);  // Saat 17:00 randevuya sonlandırma
+            DateTime startDateTmp = dateTmp.AddHours(_startHour);  // Saat 09:00 randevuya başlama
+            DateTime endDateTmp = dateTmp.AddHours(_endHour);      // Saat 17:00 randevuya sonlandırma
             return _appRep.Where(x => startDateTmp <= x.StartDate && x.StartDate < endDateTmp && x.DoctorID == doctorTmp.ID && x.DataStatus != DataStatus.Deleted);
         }
 
@@ -61,8 +63,7 @@ namespace HospitalSystem.WinFormUI
             {
                 DateTime dateTmp = (cmbDates.SelectedItem as DateTime?).Value;
                 Doctor doctorTmp = cmbDoctors.SelectedItem as Doctor;
-                lstAppointments.DataSource = ListAppointments(dateTmp.Date, doctorTmp);
-                lstAppointments.SelectedIndex = -1;
+                UpdateListboxDataSource( ListAppointments(dateTmp.Date, doctorTmp) );
             }
         }
 
@@ -79,10 +80,10 @@ namespace HospitalSystem.WinFormUI
                 Doctor doctorTmp = cmbDoctors.SelectedItem as Doctor;
                 List<Appointment> res = ListAppointments(dateTmp, doctorTmp);
 
-                if (res.Count > 0) MessageBox.Show("Seçilen doktorun ilgili tarihte zaten randevuları var.\r\nBu sebepten ilgili tarih için randevular oluşturulamadı.");
+                if (res.Count > 0) MessageBox.Show("The selected doctor already has appointments on the relevant date.\r\nFor this reason, appointments could not be created for the relevant date.");
                 else
                 {
-                    for (int i = 9; i < 17; i++)
+                    for (int i = _startHour; i < _endHour; i++)
                     {
                         if (dateTmp.AddHours(i) > DateTime.Now) //Randevu saati şimdiki zamandan önce olamaz.
                         {
@@ -92,7 +93,7 @@ namespace HospitalSystem.WinFormUI
                             _appRep.Add(app);
                         }
                     }
-                    MessageBox.Show("Seçilen doktor için ilgili tarihe randevular başarıyla oluşturuldu.");
+                    MessageBox.Show("Appointments for the selected doctor have been successfully created for the relevant date.");
                 }
                 UpdateListbox();
             }
@@ -104,12 +105,11 @@ namespace HospitalSystem.WinFormUI
             {
                 DateTime dateTmp = (cmbDates.SelectedItem as DateTime?).Value;
                 Doctor doctorTmp = cmbDoctors.SelectedItem as Doctor;
-                DateTime startDateTmp = dateTmp.AddHours(9); // Saat 09:00 randevuya başlama
-                DateTime endDateTmp = dateTmp.AddHours(17);  // Saat 17:00 randevuya sonlandırma
+                DateTime startDateTmp = dateTmp.AddHours(_startHour); // Saat 09:00 randevuya başlama
+                DateTime endDateTmp = dateTmp.AddHours(_endHour);     // Saat 17:00 randevuya sonlandırma
                 List<Appointment> res = _appRep.Where(x => startDateTmp <= x.StartDate && x.StartDate < endDateTmp && x.DoctorID == doctorTmp.ID);
-                if (res.Count == 0) MessageBox.Show("Bu tarihte randevu bulunamadı.");
-                lstAppointments.DataSource = res;
-                lstAppointments.SelectedIndex = -1;
+                if (res.Count == 0) MessageBox.Show("No appointment found on this date.");
+                UpdateListboxDataSource(res);
             }
         }
 
@@ -127,7 +127,7 @@ namespace HospitalSystem.WinFormUI
                 List<Appointment> res = _appRep.Where(x => x.StartDate == dateTmp && x.DoctorID == doctorTmp.ID);
                 if (res.Count > 0)
                 {
-                    MessageBox.Show("Doktorun ilgili tarihte randevusu bulunmaktadır. Bu yüzden randevu güncellenemedi.");
+                    MessageBox.Show("The doctor has an appointment on the relevant date.\r\nThat's why the appointment could not be updated.");
                     return;
                 }
                 _selectedAppointment.StartDate = dateTmp;
@@ -169,12 +169,17 @@ namespace HospitalSystem.WinFormUI
             {
                 DateTime dateTmp = (cmbDates.SelectedItem as DateTime?).Value;
                 Doctor doctorTmp = cmbDoctors.SelectedItem as Doctor;
-                DateTime startDateTmp = dateTmp.AddHours(9); // Saat 09:00 randevuya başlama
-                DateTime endDateTmp = dateTmp.AddHours(17);  // Saat 17:00 randevuya sonlandırma
+                DateTime startDateTmp = dateTmp.AddHours(_startHour); // Saat 09:00 randevuya başlama
+                DateTime endDateTmp = dateTmp.AddHours(_endHour);  // Saat 17:00 randevuya sonlandırma
                 List<Appointment> res = _appRep.Where(x => startDateTmp <= x.StartDate && x.StartDate < endDateTmp && x.DoctorID == doctorTmp.ID && x.DataStatus == dataStatus);
-                lstAppointments.DataSource = res;
-                lstAppointments.SelectedIndex = -1;
+                UpdateListboxDataSource(res);
             }
+        }
+
+        private void UpdateListboxDataSource(List<Appointment> res)
+        {
+            lstAppointments.DataSource = res;
+            lstAppointments.SelectedIndex = -1;
         }
 
         private void btnPassives_Click(object sender, EventArgs e)
@@ -185,6 +190,11 @@ namespace HospitalSystem.WinFormUI
         private void btnModifieds_Click(object sender, EventArgs e)
         {
             UpdateListboxPassivesAndModifieds(DataStatus.Modified);
+        }
+
+        private void cmbDates_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateListbox();
         }
 
         private void cmbDoctors_SelectedIndexChanged(object sender, EventArgs e)

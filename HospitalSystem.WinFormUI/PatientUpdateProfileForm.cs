@@ -35,9 +35,9 @@ namespace HospitalSystem.WinFormUI
                 if (txtPhone.Text.Trim().Length > 0) _authPatient.PatientProfile.Phone = txtPhone.Text.Trim();
                 if (txtEmail.Text.Trim().Length>0) _authPatient.PatientProfile.Email = txtEmail.Text.Trim();
                 _patRep.Update(_authPatient);
-                MessageBox.Show("Forma girilen veriler kayıt edildi.");
+                MessageBox.Show("The data entered into the form was recorded.");
             }
-            else throw new Exception("PatientUpdateProfile'daki _authPatient değişkeninin değeri null geldi. Authentication işlemi başarısız.");
+            else throw new Exception("The value of the _authPatient variable in PatientUpdateProfile was null. Authentication failed.");
         }
 
         private void btnSave_Click(object sender, EventArgs e)

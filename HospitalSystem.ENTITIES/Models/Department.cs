@@ -9,7 +9,7 @@ namespace HospitalSystem.ENTITIES.Models
 {
     public class Department : BaseEntity
     {
-        public string DepartmanName { get; set; }
+        public string DepartmentName { get; set; }
         public string Description { get; set; }
 
         //Relational Properties
@@ -20,7 +20,7 @@ namespace HospitalSystem.ENTITIES.Models
 
         public override string ToString()
         {
-            return DepartmanName;
+            return DepartmentName;
         }
     }
 }
