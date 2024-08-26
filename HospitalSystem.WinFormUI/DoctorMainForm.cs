@@ -45,7 +45,7 @@ namespace HospitalSystem.WinFormUI
                 lblName.Text = lblSurname.Text = lblEmail.Text = lblPhone.Text = lblDepartment.Text = "-";
             }
 
-            lstDoctorAppointments.DataSource = _authDoctor.Appointments.Where(x=>x.StartDate > DateTime.Now).ToList();            
+            lstDoctorAppointments.DataSource = _authDoctor.Appointments.Where(x=>x.StartDate > DateTime.Now & x.PatientID != null ).ToList();            
         }
     }
 }

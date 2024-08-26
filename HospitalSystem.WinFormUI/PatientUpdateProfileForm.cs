@@ -43,6 +43,7 @@ namespace HospitalSystem.WinFormUI
         private void btnSave_Click(object sender, EventArgs e)
         {
             UpdatePatientInfos();
+            Close();
         }
     }
 }

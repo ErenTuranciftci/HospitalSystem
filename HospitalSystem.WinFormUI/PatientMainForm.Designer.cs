@@ -41,7 +41,6 @@
             this.lblTCKNo = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.btnUpdateProfile = new System.Windows.Forms.Button();
             this.btnPatientAppointment = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -152,21 +151,11 @@
             this.lblEmail.Size = new System.Drawing.Size(128, 23);
             this.lblEmail.TabIndex = 1;
             // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Location = new System.Drawing.Point(43, 330);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(128, 23);
-            this.btnRefresh.TabIndex = 5;
-            this.btnRefresh.Text = "Refresh Screen";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
             // btnUpdateProfile
             // 
-            this.btnUpdateProfile.Location = new System.Drawing.Point(43, 368);
+            this.btnUpdateProfile.Location = new System.Drawing.Point(43, 331);
             this.btnUpdateProfile.Name = "btnUpdateProfile";
-            this.btnUpdateProfile.Size = new System.Drawing.Size(128, 23);
+            this.btnUpdateProfile.Size = new System.Drawing.Size(210, 28);
             this.btnUpdateProfile.TabIndex = 5;
             this.btnUpdateProfile.Text = "Update Profile";
             this.btnUpdateProfile.UseVisualStyleBackColor = true;
@@ -174,9 +163,9 @@
             // 
             // btnPatientAppointment
             // 
-            this.btnPatientAppointment.Location = new System.Drawing.Point(399, 190);
+            this.btnPatientAppointment.Location = new System.Drawing.Point(374, 157);
             this.btnPatientAppointment.Name = "btnPatientAppointment";
-            this.btnPatientAppointment.Size = new System.Drawing.Size(202, 50);
+            this.btnPatientAppointment.Size = new System.Drawing.Size(287, 50);
             this.btnPatientAppointment.TabIndex = 6;
             this.btnPatientAppointment.Text = "Go to the patient appointments form!";
             this.btnPatientAppointment.UseVisualStyleBackColor = true;
@@ -189,7 +178,6 @@
             this.ClientSize = new System.Drawing.Size(876, 545);
             this.Controls.Add(this.btnPatientAppointment);
             this.Controls.Add(this.btnUpdateProfile);
-            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -226,7 +214,6 @@
         private System.Windows.Forms.Label lblTCKNo;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnUpdateProfile;
         private System.Windows.Forms.Button btnPatientAppointment;
     }

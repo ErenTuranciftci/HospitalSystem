@@ -37,7 +37,7 @@
             // btnDoctorLogin
             // 
             this.btnDoctorLogin.Location = new System.Drawing.Point(349, 234);
-            this.btnDoctorLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDoctorLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnDoctorLogin.Name = "btnDoctorLogin";
             this.btnDoctorLogin.Size = new System.Drawing.Size(140, 28);
             this.btnDoctorLogin.TabIndex = 9;
@@ -48,18 +48,18 @@
             // btnPatientLogin
             // 
             this.btnPatientLogin.Location = new System.Drawing.Point(540, 234);
-            this.btnPatientLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPatientLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnPatientLogin.Name = "btnPatientLogin";
             this.btnPatientLogin.Size = new System.Drawing.Size(140, 28);
             this.btnPatientLogin.TabIndex = 8;
-            this.btnPatientLogin.Text = "Patient Entry Form";
+            this.btnPatientLogin.Text = "Patient Login Form";
             this.btnPatientLogin.UseVisualStyleBackColor = true;
             this.btnPatientLogin.Click += new System.EventHandler(this.btnPatientLogin_Click);
             // 
             // btnAdminLogin
             // 
             this.btnAdminLogin.Location = new System.Drawing.Point(159, 234);
-            this.btnAdminLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdminLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdminLogin.Name = "btnAdminLogin";
             this.btnAdminLogin.Size = new System.Drawing.Size(140, 28);
             this.btnAdminLogin.TabIndex = 7;
@@ -87,7 +87,7 @@
             this.Controls.Add(this.btnPatientLogin);
             this.Controls.Add(this.btnAdminLogin);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SystemLoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SystemLogin";

@@ -53,16 +53,12 @@ namespace HospitalSystem.WinFormUI
            UpdatePatientInfos();
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            UpdatePatientInfos();
-        }
-
         private void btnPatientAppointment_Click(object sender, EventArgs e)
         {
             Hide();
             PatientAppointmentForm patientAppointmentForm = new PatientAppointmentForm(_authPatient);
             patientAppointmentForm.ShowDialog();
+            UpdatePatientInfos();
             Show();
         }
 
@@ -71,6 +67,7 @@ namespace HospitalSystem.WinFormUI
             Hide();
             PatientUpdateProfileForm patientUpdateProfileForm = new PatientUpdateProfileForm(_authPatient);
             patientUpdateProfileForm.ShowDialog();
+            UpdatePatientInfos();
             Show();
         }
     }
